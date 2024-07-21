@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Code syntax referenced from https://html.spec.whatwg.org/ -->
+ <head>
+     <title>City Pulse Dynamics SCMS</title>
+     <link rel="stylesheet" href="styles.css">
+     <!-- Responsive Viewport -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Script to call API to fetch camera feeds from ODOT -->
+     <!-- Note this script does NOT work if the HTML file is not coming from a web server due to CORS restrictions -->
+     <script>
+        fetch('https://publicapi.ohgo.com/api/v1/cameras?region=columbus', {
+            headers: {
+                'Accept': 'application/xml',
+                'Authorization': 'APIKEY 70381978-026a-408c-9dae-408dff0c8e4d'
+            }
+        })
+          .then(res => {
+            return res.json();
+        })
+         .then(data => {
+            data.forEach(SmallUrl => {
+                const markup ='<img a href="$(SmallUrl)"> </img>';
+                document.querySelector('ul').insertAdjacentHTML('beforeend', markup);
+        })
+         .catch(error => console.log(error))
+        });
+    </script>
+ </head>
+ <body>
+  <!-- Top Level Container -->
+  <div>
+  <!-- Sidebar Menu -->
+  <div class="sidebar" style="z-index:4">
+    <nav id="Main_Menu" class= "sidebar collapse white animate-left" style="z-index:3;width: 300px;">
+    </nav>
+  </div>
+  <!-- Header -->
+  <div>
+  </div>
+  <!-- Camera Feeds -->
+  <div>
+    <ul>
+    </ul>
+  </div>
+  <!-- Main Content -->
+  <div>
+  </div>
+  <!-- Close top-level container -->
+  </div>
+ </body>
+</html>
+
+
+

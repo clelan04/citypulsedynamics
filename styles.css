@@ -1,0 +1,31 @@
+/* Master style sheet for web app for Smart City Management System*/
+
+/* All styles referenced from w3schools.com/css */
+
+/* Major element styling */
+body {
+  background-color: white;
+}
+
+/* Text styling */
+h1 {
+  color: blue;
+}
+
+p {
+  color: black;
+}
+
+/* Responsive Styling */
+/* Reference https://www.w3schools.com/css/css_rwd_grd.asp */  
+.col-1 {
+  width: 25%;
+  float: left;
+}
+
+.col-2 {
+  width:75%;
+  float: left;
+}
+
+/* Styling for Accessibility */
