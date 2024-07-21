@@ -7,6 +7,22 @@ body {
   background-color: white;
 }
 
+.feedmain {
+    padding: 16px;
+    height: 100px;
+    padding-left: 0px
+}
+
+.feeds {
+    height: 100%;
+    width: auto;
+    position: relative;
+    z-index: -1;
+    top: 50px;
+    padding-left: 225px;
+    background-color: #0d0b2e;
+}
+
 /* Text styling */
 h1 {
   color: blue;
@@ -14,6 +30,33 @@ h1 {
 
 p {
   color: black;
+}
+
+/* Sidebar Style */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    padding-top: 50px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    background-color: navy;
+    overflow-x: hidden;
+}
+
+/* Sidebar Link Style */
+.sidenav a {
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Sidebar Link Hover Style */
+.sidenav a:hover {
+    background-color: gray;
+    color: black;
 }
 
 /* Responsive Styling */
