@@ -2,10 +2,11 @@
 <html lang="en">
 <!-- Code syntax referenced from https://html.spec.whatwg.org/ -->
  <head>
-     <title>City Pulse Dynamics SCMS</title>
+     <title>CityPulse Dynamics SCMS</title>
      <link rel="stylesheet" href="styles.css">
      <!-- Responsive Viewport -->
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta charset="utf-8" />
      
      <script>
         //Script to call API to fetch camera feeds from ODOT
@@ -55,19 +56,22 @@
         <a href="alerts.html">Alerts</a>
     </nav>
   </div>
+      <div class="content">
   <!-- Header -->
-  <div>
+  <div class="header">
+      <div class="pgtitle"><p> CityPulse Dynamics Dashboard </p></div><div class="logo"><img class="logoimg" src=assets/logo.png alt="CityPulse Dynamics Logo Image" /></div>
   </div>
   <!-- Camera Feeds -->
   <div class="feeds">
-      <a href="https://itscameras.dot.state.oh.us/images/CMH/CMH061c.jpg"><img class="feedmain" src="https://itscameras.dot.state.oh.us/images/CMH/CMH061c.jpg" alt="Interstate 270 and Interstate 161 Live Camera Feed"></a>
-    <img class="feedmain" src="https://itscameras.dot.state.oh.us/images/CMH/SR-161_at_Little_Turtle_Way.jpg" alt="Interstate 161 at Little Turtle Way live camera feed">
-    <img class="feedmain" src="https://itscameras.dot.state.oh.us:443/images/CMH/SR-161_at_Hamilton_Rd.jpg" alt="Interstate 161 and Hamilton Road live camera feed">
-    <img class=feedmain src="https://itscameras.dot.state.oh.us:443/images/CCTV_Trailer_5.jpg" alt="Interstate 161 and State Route 62 live camera feed">
+    <a href="https://itscameras.dot.state.oh.us/images/CMH/CMH061c.jpg"><img class="feedmain" src="https://itscameras.dot.state.oh.us/images/CMH/CMH061c.jpg" alt="Interstate 270 and Interstate 161 Live Camera Feed"></a>
+      <a href="https://itscameras.dot.state.oh.us/images/CMH/SR-161_at_Little_Turtle_Way.jpg"><img class="feedmain" src="https://itscameras.dot.state.oh.us/images/CMH/SR-161_at_Little_Turtle_Way.jpg" alt="Interstate 161 at Little Turtle Way live camera feed"></a>
+    <a href="https://itscameras.dot.state.oh.us:443/images/CMH/SR-161_at_Hamilton_Rd.jpg"><img class="feedmain" src="https://itscameras.dot.state.oh.us:443/images/CMH/SR-161_at_Hamilton_Rd.jpg" alt="Interstate 161 and Hamilton Road live camera feed"></a>
+    <a href="https://itscameras.dot.state.oh.us:443/images/CCTV_Trailer_5.jpg"><img class=feedmain src="https://itscameras.dot.state.oh.us:443/images/CCTV_Trailer_5.jpg" alt="Interstate 161 and State Route 62 live camera feed"></a>
   </div>
   <!-- Main Content -->
   <div>
   </div>
+      </div>
   <!-- Close top-level container -->
   </div>
  </body>

@@ -7,6 +7,36 @@ body {
   background-color: white;
 }
 
+.header {
+    background-color: #4e596f;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: table-row;
+}
+
+.logo {
+    display: table-cell;
+    width: auto;
+}
+
+.logoimg{
+    max-height: 100px;
+    min-height: 25px;
+    width: auto;
+}
+
+.pgtitle {
+    text-align: center;
+    font-family: helvetica;
+    font-size: 16;
+    font-size-adjust: auto;
+    text-decoration: bold;
+    color: white;
+    width: 100%;
+    display: table-cell;
+}
+
 .feedmain {
     padding: 16px;
     height: 100px;
@@ -18,9 +48,8 @@ body {
     width: auto;
     position: relative;
     z-index: -1;
-    top: 50px;
-    padding-left: 225px;
-    background-color: #0d0b2e;
+    padding-left: 20px;
+    background-color: #222f4b;
 }
 
 /* Text styling */
@@ -28,21 +57,20 @@ h1 {
   color: blue;
 }
 
-p {
-  color: black;
-}
 
 /* Sidebar Style */
 .sidenav {
     height: 100%;
-    width: 200px;
+    width: 20%;
     padding-top: 50px;
     position: fixed;
     z-index: 1;
+    display: block !important;
     top: 0;
     bottom: 0;
-    background-color: navy;
+    background-color: #2b2f39;
     overflow-x: hidden;
+    float: left;
 }
 
 /* Sidebar Link Style */
@@ -51,6 +79,7 @@ p {
     padding: 16px;
     text-decoration: none;
     display: block;
+    font-family: helvetica;
 }
 
 /* Sidebar Link Hover Style */
@@ -61,14 +90,11 @@ p {
 
 /* Responsive Styling */
 /* Reference https://www.w3schools.com/css/css_rwd_grd.asp */  
-.col-1 {
-  width: 25%;
-  float: left;
-}
 
-.col-2 {
-  width:75%;
-  float: left;
+
+.content {
+  width:80%;
+  float: right;
 }
 
 /* Styling for Accessibility */
