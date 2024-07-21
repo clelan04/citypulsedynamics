@@ -8,41 +8,43 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta charset="utf-8" />
      
-     <script>
+     <script language='javascript'>
         //Script to call API to fetch camera feeds from ODOT
         //Note this script does NOT work if the HTML file is not coming from a web server due to CORS restrictions
         //Manual links have been added to the code as a workaround
-        fetch('https://publicapi.ohgo.com/api/v1/cameras?region=columbus', {
-            headers: {
-                'Accept': 'application/xml',
-                'Authorization': 'APIKEY 70381978-026a-408c-9dae-408dff0c8e4d'
-            }
-        })
-          .then(res => {
-            return res.json();
-        })
-         .then(data => {
-            data.forEach(SmallUrl => {
-                const markup ='<img a href="$(SmallUrl)"> </img>';
-                document.querySelector('ul').insertAdjacentHTML('beforeend', markup);
-        })
-         .catch(error => console.log(error))
-        });
+//        fetch('https://publicapi.ohgo.com/api/v1/cameras?region=columbus', {
+//            method: 'GET',
+//            headers: {
+//                'Accept': 'application/xml',
+//                'Authorization': 'APIKEY 70381978-026a-408c-9dae-408dff0c8e4d'
+//            }
+//        })
+//          .then(res => {
+//            return res.json();
+//        })
+//         .then(data => {
+//            data.forEach(SmallUrl => {
+//                const markup ='<img a href="$(SmallUrl)"> </img>';
+//                document.querySelector('ul').insertAdjacentHTML('beforeend', markup);
+//        })
+//         .catch(error => console.log(error))
+//        });
          
         // Script to auto-refresh camera feed images every 5 seconds
-        // From https://stackoverflow.com/questions/55802438/how-do-i-refresh-an-image-in-html
-           setInterval(function(){
-            refreshImg();
-        }, 5000);
-        
+        // With assistance from: https://stackoverflow.com/questions/4572193/how-to-reload-img-every-5-second-using-javascript
 
-        function refreshImg(){
-            var x = document.querySelectorAll("body > img");
-            for (var i = x.length - 1; i >= 0; i--) {
-                x[i].src = x[i].src + '&' + new Date().getTime();
-                console.log(x[i].src);
-            };
-        }
+
+         
+         setInterval(function() { 
+            let camera = ["270", "littlet", "ham", "62"];
+            camera.length = 3;
+            var i=0;
+            for(i=0, i<camera.length, i++) {
+                var myImageElement = document.getElementsByID(camera);
+                var ODOTsrc=myImageElement.src;
+                myImageElement.src = ODOTsrc + '?rand=' + Math.random();}
+         }, 5000)
+         
     </script>
  </head>
  <body>
@@ -63,10 +65,10 @@
   </div>
   <!-- Camera Feeds -->
   <div class="feeds">
-    <a href="https://itscameras.dot.state.oh.us/images/CMH/CMH061c.jpg"><img class="feedmain" src="https://itscameras.dot.state.oh.us/images/CMH/CMH061c.jpg" alt="Interstate 270 and Interstate 161 Live Camera Feed"></a>
-      <a href="https://itscameras.dot.state.oh.us/images/CMH/SR-161_at_Little_Turtle_Way.jpg"><img class="feedmain" src="https://itscameras.dot.state.oh.us/images/CMH/SR-161_at_Little_Turtle_Way.jpg" alt="Interstate 161 at Little Turtle Way live camera feed"></a>
-    <a href="https://itscameras.dot.state.oh.us:443/images/CMH/SR-161_at_Hamilton_Rd.jpg"><img class="feedmain" src="https://itscameras.dot.state.oh.us:443/images/CMH/SR-161_at_Hamilton_Rd.jpg" alt="Interstate 161 and Hamilton Road live camera feed"></a>
-    <a href="https://itscameras.dot.state.oh.us:443/images/CCTV_Trailer_5.jpg"><img class=feedmain src="https://itscameras.dot.state.oh.us:443/images/CCTV_Trailer_5.jpg" alt="Interstate 161 and State Route 62 live camera feed"></a>
+   <img id="270" class="feedmain" src="https://itscameras.dot.state.oh.us/images/CMH/CMH061c.jpg" alt="Interstate 270 and Interstate 161 Live Camera Feed">
+     <img id="littlet" class="feedmain" src="https://itscameras.dot.state.oh.us/images/CMH/SR-161_at_Little_Turtle_Way.jpg" alt="Interstate 161 at Little Turtle Way live camera feed"> <a href="https://itscameras.dot.state.oh.us/images/CMH/SR-161_at_Little_Turtle_Way.jpg">
+      <img id="ham" class="feedmain" src="https://itscameras.dot.state.oh.us:443/images/CMH/SR-161_at_Hamilton_Rd.jpg" alt="Interstate 161 and Hamilton Road live camera feed">
+    <img id= "62" class="feedmain" src="https://itscameras.dot.state.oh.us:443/images/CCTV_Trailer_5.jpg" alt="Interstate 161 and State Route 62 live camera feed">
   </div>
   <!-- Main Content -->
   <div>

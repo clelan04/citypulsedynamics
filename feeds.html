@@ -12,22 +12,28 @@
         //Script to call API to fetch camera feeds from ODOT
         //Note this script does NOT work if the HTML file is not coming from a web server due to CORS restrictions
         //Manual links have been added to the code as a workaround
-        fetch('https://publicapi.ohgo.com/api/v1/cameras?region=columbus', {
-            headers: {
-                'Accept': 'application/xml',
-                'Authorization': 'APIKEY 70381978-026a-408c-9dae-408dff0c8e4d'
-            }
-        })
-          .then(res => {
-            return res.json();
-        })
-         .then(data => {
-            data.forEach(SmallUrl => {
-                const markup ='<img a href="$(SmallUrl)"> </img>';
-                document.querySelector('ul').insertAdjacentHTML('beforeend', markup);
-        })
-         .catch(error => console.log(error))
-        });
+//        fetch('https://publicapi.ohgo.com/api/v1/cameras?region=columbus', {
+//            method: 'GET',
+//            headers: {
+//                'Accept': 'application/xml',
+//                'Authorization': 'APIKEY 70381978-026a-408c-9dae-408dff0c8e4d'
+//            }
+//        })
+//          .then(res => {
+//            return res.json();
+//        })
+//         .then(data => {
+//            data.forEach(SmallUrl => {
+//                const markup ='<img a href="$(SmallUrl)"> </img>';
+//                document.querySelector('ul').insertAdjacentHTML('beforeend', markup);
+//        })
+//         .catch(error => console.log(error))
+//        });
+         
+        // Script to auto-refresh camera feed images every 5 seconds
+        // With assistance from: https://stackoverflow.com/questions/4572193/how-to-reload-img-every-5-second-using-javascript
+
+
          
         // Script to auto-refresh camera feed images every 5 seconds
         // From https://stackoverflow.com/questions/55802438/how-do-i-refresh-an-image-in-html
