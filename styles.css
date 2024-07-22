@@ -31,7 +31,7 @@ body {
     font-family: helvetica;
     font-size: 16;
     font-size-adjust: auto;
-    text-decoration: bold;
+    font-style: bold;
     color: white;
     width: 100%;
     display: table-cell;
@@ -85,6 +85,32 @@ body {
     padding-top: 100px;
 }
 
+.tbltitle {
+    font-family: helvetica;
+    font-size: 16 !important;
+    font-style: bold !important;
+    color: white;
+    background-color: #222f4b;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    padding-right: 100px;
+    margin-left: 20px;
+}
+
+td {
+    border: 1px solid;
+}
+
+.alert {
+    font-family: helvetica;
+    font-size: 21;
+    font-size-adjust: auto;
+    padding-left: 25px;
+}
+
 .first {
     order: 1;
 }
@@ -100,23 +126,6 @@ body {
 .fourth {
     order:4;
 }
-
-.statistics {
-    display: table;
-    padding-left: 25px;
-    font-family: helvetica;
-    font-size: 14;
-}
-
-.statistics > div {
-    display: table-row;
-}
-
-.statistics > div > div {
-    display: table-cell;
-    padding: 5px;
-}
-
 
 
 /* Text styling */

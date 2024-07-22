@@ -1,82 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Code syntax referenced from https://html.spec.whatwg.org/ -->
- <head>
-     <title>CityPulse Dynamics SCMS</title>
-     <link rel="stylesheet" href="styles.css">
-     <!-- Responsive Viewport -->
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta charset="utf-8" />
+<!-- Hand coded by Lisa Cleland -->
+<head>
+    <title>CityPulse Dynamics SCMS</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Responsive Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <!--Scripts for pulling camera feeds and refreshing them. Could not get the 5 second refresh code to work. Will consult teammates who are more programming savvy to fix. -->
      
-     <script language='javascript'>
-        //Script to call API to fetch camera feeds from ODOT
-        //Note this script does NOT work if the HTML file is not coming from a web server due to CORS restrictions
-        //Manual links have been added to the code as a workaround
-//        fetch('https://publicapi.ohgo.com/api/v1/cameras?region=columbus', {
-//            method: 'GET',
-//            headers: {
-//                'Accept': 'application/xml',
-//                'Authorization': 'APIKEY 70381978-026a-408c-9dae-408dff0c8e4d'
-//            }
-//        })
-//          .then(res => {
-//            return res.json();
-//        })
-//         .then(data => {
-//            data.forEach(SmallUrl => {
-//                const markup ='<img a href="$(SmallUrl)"> </img>';
-//                document.querySelector('ul').insertAdjacentHTML('beforeend', markup);
-//        })
-//         .catch(error => console.log(error))
-//        });
+    <script language='javascript'>
+    //Script to call API to fetch camera feeds from ODOT
+    //Note this script does NOT work if the HTML file is not coming from a web server due to CORS restrictions
+    //Manual links have been added to the code as a workaround
+    //      fetch('https://publicapi.ohgo.com/api/v1/cameras?region=columbus', {
+    //            method: 'GET',
+    //            headers: {
+    //                'Accept': 'application/xml',
+    //                'Authorization': 'APIKEY 70381978-026a-408c-9dae-408dff0c8e4d'
+    //            }
+    //        })
+    //          .then(res => {
+    //            return res.json();
+    //        })
+    //         .then(data => {
+    //            data.forEach(SmallUrl => {
+    //                const markup ='<img a href="$(SmallUrl)"> </img>';
+    //                document.querySelector('ul').insertAdjacentHTML('beforeend', markup);
+    //        })
+    //         .catch(error => console.log(error))
+    //        });
          
-        // Script to auto-refresh camera feed images every 5 seconds
-        // With assistance from: https://stackoverflow.com/questions/4572193/how-to-reload-img-every-5-second-using-javascript
-
-
-         
-         setInterval(function() { 
+    // Script to auto-refresh camera feed images every 5 seconds
+    // With assistance from: https://stackoverflow.com/questions/4572193/how-to-reload-img-every-5-second-using-javascript
+     
+        setInterval(function() { 
             let camera = ["270", "littlet", "ham", "62"];
             camera.length = 3;
-            var i=0;
+            //var i=0;
             for(i=0, i<camera.length, i++) {
-                var myImageElement = document.getElementsByID(camera);
+                var myImageElement = document.getElementByID(camera);
                 var ODOTsrc=myImageElement.src;
                 myImageElement.src = ODOTsrc + '?rand=' + Math.random();}
-         }, 5000)
+        }, 5000)
          
-    </script>
- </head>
- <body>
-  <!-- Top Level Container -->
-  <div>
-  <!-- Sidebar Menu -->
-  <div class="sidenav" style="z-index:1">
-    <nav id="Main_Menu">
-        <a href="feeds.html">Camera Feeds</a>
-        <a href="stats.html">Statistics</a>
-        <a href="alerts.html">Alerts</a>
-    </nav>
-  </div>
-      <div class="content">
-  <!-- Header -->
-  <div class="header">
-      <div class="pgtitle"><p> CityPulse Dynamics Dashboard </p></div><div class="logo"><img class="logoimg" src=assets/logo.png alt="CityPulse Dynamics Logo Image" /></div>
-  </div>
-  <!-- Camera Feeds -->
-  <div class="feeds">
-   <img id="270" class="feedmain" src="https://itscameras.dot.state.oh.us/images/CMH/CMH061c.jpg" alt="Interstate 270 and Interstate 161 Live Camera Feed">
-     <img id="littlet" class="feedmain" src="https://itscameras.dot.state.oh.us/images/CMH/SR-161_at_Little_Turtle_Way.jpg" alt="Interstate 161 at Little Turtle Way live camera feed"> <a href="https://itscameras.dot.state.oh.us/images/CMH/SR-161_at_Little_Turtle_Way.jpg">
-      <img id="ham" class="feedmain" src="https://itscameras.dot.state.oh.us:443/images/CMH/SR-161_at_Hamilton_Rd.jpg" alt="Interstate 161 and Hamilton Road live camera feed">
-    <img id= "62" class="feedmain" src="https://itscameras.dot.state.oh.us:443/images/CCTV_Trailer_5.jpg" alt="Interstate 161 and State Route 62 live camera feed">
-  </div>
-  <!-- Main Content -->
-  <div>
-  </div>
-      </div>
+    </script>    
+</head>  
+<!--Main Body-->
+<body>
+    <!-- Top Level Container -->
+    <div>
+    <!-- Sidebar Menu -->
+        <div class="sidenav" style="z-index:1">
+            <nav id="Main_Menu">
+                <a href="feeds.html">Camera Feeds</a>
+                <a href="stats.html">Statistics</a>
+                <a href="alerts.html">Alerts</a>
+            </nav>
+        </div>
+        <!-- Second Level Container -->
+        <div class="content">
+        <!-- Header -->
+        <div class="header">
+            <div class="pgtitle"><p> CityPulse Dynamics Dashboard </p></div><div class="logo"><img class="logoimg" src=assets/logo.png alt="CityPulse Dynamics Logo Image" /></div>
+            </div>
+                <!-- Camera Feeds -->
+                <div class="feeds">
+                    <img id="270" class="feedmain" src="https://itscameras.dot.state.oh.us/images/CMH/CMH061c.jpg" alt="Interstate 270 and Interstate 161 Live Camera Feed">
+                    <img id="littlet" class="feedmain" src="https://itscameras.dot.state.oh.us/images/CMH/SR-161_at_Little_Turtle_Way.jpg" alt="Interstate 161 at Little Turtle Way live camera feed">
+                    <img id="ham" class="feedmain" src="https://itscameras.dot.state.oh.us:443/images/CMH/SR-161_at_Hamilton_Rd.jpg" alt="Interstate 161 and Hamilton Road live camera feed">
+                    <img id= "62" class="feedmain" src="https://itscameras.dot.state.oh.us:443/images/CCTV_Trailer_5.jpg" alt="Interstate 161 and State Route 62 live camera feed">
+                </div>
+            <!-- Main Content -->
+            <div>
+                <table id= "statTable" class="statistics">
+                    <tr class="tbltitle">
+                        <td><p>Total Traffic Events</p></td> <td><p>Car Throughput</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Major Slowdowns: 2</p></td> <td><p>350 per hour</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Accidents: 0</p></td> <td><p>8,400 per day</p></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <p class="alert">No alerts at this time.</p>
+            </div>
+        </div>
   <!-- Close top-level container -->
-  </div>
- </body>
+    </div>
+    </body>
 </html>
 
 

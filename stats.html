@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Code syntax referenced from https://html.spec.whatwg.org/ -->
- <head>
-     <title>CityPulse Dynamics SCMS</title>
-     <link rel="stylesheet" href="styles.css">
-     <!-- Responsive Viewport -->
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta charset="utf-8" />
+<head>
+    <title>CityPulse Dynamics SCMS</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Responsive Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
      
-     <script>
+    <script>
 
     </script>
  </head>
  <body>
-  <!-- Top Level Container -->
-  <div>
-  <!-- Sidebar Menu -->
-  <div class="sidenav" style="z-index:1">
-    <nav id="Main_Menu">
-        <a href="main.html">Home</a>
-        <a href="feeds.html">Camera Feeds</a>
-        <a href="stats.html">Statistics</a>
-        <a href="alerts.html">Alerts</a>
-    </nav>
-  </div>
-      <div class="content">
-  <!-- Header -->
-  <div class="header">
-      <div class="pgtitle"><p> CityPulse Dynamics Statistics Dashboard </p></div><div class="logo"><img class="logoimg" src=assets/logo.png alt="CityPulse Dynamics Logo Image" /></div>
-  </div>
-  <!-- Main Content -->
-  <table class="statistics">
-      <tr>
-          <td><p>Total Traffic Events</p></td> <td><p>Car Throughput</p></td>
-      </tr>
-      <tr>
-          <td><p>Major Slowdowns: 2</p></td> <td><p>350 per hour</p></td>
-      </tr>
-  </table>
-      </div>
+    <!-- Top Level Container -->
+    <div>
+    <!-- Sidebar Menu -->
+        <div class="sidenav" style="z-index:1">
+            <nav id="Main_Menu">
+                <a href="main.html">Home</a>
+                <a href="feeds.html">Camera Feeds</a>
+                <a href="stats.html">Statistics</a>
+                <a href="alerts.html">Alerts</a>
+            </nav>
+        </div>
+        <div class="content">
+        <!-- Header -->
+            <div class="header">
+                <div class="pgtitle"><p> CityPulse Dynamics Statistics Dashboard </p></div><div class="logo"><img class="logoimg" src=assets/logo.png alt="CityPulse Dynamics Logo Image" />
+                </div>
+            </div>
+            <!-- Statistics Table -->
+            <!--Note: this would be pulled real-time from the databases, this is just for illustration purposes-->
+            <table id= "statTable" class="statistics">
+                <tr class="tbltitle">
+                    <td><p>Total Traffic Events</p></td> <td><p>Car Throughput</p></td>
+                </tr>
+                <tr>
+                    <td><p>Major Slowdowns: 2</p></td> <td><p>350 per hour</p></td>
+                </tr>
+                <tr>
+                    <td><p>Accidents: 0</p></td> <td><p>8,400 per day</p></td>
+                </tr>
+            </table>
+        </div>
   <!-- Close top-level container -->
   </div>
  </body>
